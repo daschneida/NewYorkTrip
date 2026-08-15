@@ -15,6 +15,7 @@
   --orange:#FF6319;   /* B D F M */
   --yellow:#FCCC0A;   /* N Q R W */
   --purple:#B933AD;   /* 7 */
+  --green:#00933C;    /* 4 5 6 */
 }
 
 *{box-sizing:border-box;}
@@ -213,6 +214,7 @@ body{
 .b.o{background:var(--orange);}
 .b.y{background:var(--yellow);color:var(--ink);}
 .b.p{background:var(--purple);}
+.b.g{background:var(--green);}
 
 .flag{
   border-left:3px solid var(--red);
@@ -487,17 +489,8 @@ body{
       </div>
     </div>
 
-    <div class="stop hero">
-      <div class="time">2:25p</div><div class="track"></div>
-      <div class="body">
-        <div class="what">SeaGlass Carousel</div>
-        <span class="addr">State &amp; Water Streets · 4 min walk from the ferry · $6</span>
-        <div class="note">Inside a glass nautilus shell. You ride <b>inside</b> illuminated fish rather than on top of horses, and the whole thing spins on three rotating platters. Four minutes, and worth every one of the six dollars.</div>
-      </div>
-    </div>
-
     <div class="stop">
-      <div class="time">2:55p</div><div class="track"></div>
+      <div class="time">2:45p</div><div class="track"></div>
       <div class="body">
         <div class="what">9/11 Memorial pools &amp; the Oculus</div>
         <span class="addr">180 Greenwich Street · 15 min walk</span>
@@ -533,10 +526,30 @@ body{
     </div>
 
     <div class="stop">
-      <div class="time">7:45p</div><div class="track"></div>
+      <div class="time">7:25p</div><div class="track"></div>
       <div class="body">
-        <div class="what"><span class="b o">F</span> from York Street → 34th St–Herald Square</div>
-        <div class="note">One seat, no transfer, straight up Sixth Avenue. Two blocks from the hotel.</div>
+        <div class="what">Back across the river — <span class="b bl">A</span><span class="b bl">C</span> High St → Fulton St, then <span class="b g">4</span><span class="b g">5</span> → Bowling Green</div>
+        <div class="note">About 15 minutes. Bowling Green lets out at the north end of Battery Park, a four-minute walk from the carousel.</div>
+      </div>
+    </div>
+
+    <div class="stop hero">
+      <div class="time">7:55p</div><div class="track"></div>
+      <div class="body">
+        <div class="what">SeaGlass Carousel — after dark</div>
+        <span class="addr">State &amp; Water Streets · $6 · <b>closes 9:00p</b></span>
+        <div class="note">A glass nautilus shell holding thirty illuminated fish. You ride <b>inside</b> them rather than on top, and the whole floor turns on three independently rotating platters while the fish change color. Four minutes long.</div>
+        <div class="note">This is entirely a night ride. In daylight the fiber-optic lighting washes out and it's just a carousel; after dark the shell glows and the whole thing reads as an aquarium you're inside of.</div>
+        <div class="flag"><b>Last ride is around 8:45.</b> If dinner in DUMBO runs long, cut it short — this is the only hard closing time in the whole trip.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">8:30p</div><div class="track"></div>
+      <div class="body">
+        <div class="what"><span class="b r">1</span> from South Ferry → 34th St–Penn Station</div>
+        <div class="note">South Ferry is a three-minute walk from the carousel and it's the start of the line, so you'll get seats. Twenty minutes, then nine on foot. Home by 9:05.</div>
+        <div class="note">Long day — you'll have walked close to seven miles. Monday starts late on purpose.</div>
       </div>
     </div>
   </section>
@@ -819,7 +832,8 @@ body{
     <div class="card">
       <h3>Rides you'll actually take</h3>
       <div class="route"><span class="b r">1</span> <span>34th St–Penn <span class="to">→</span> South Ferry <span class="to">· Statue of Liberty, ~20 min</span></span></div>
-      <div class="route"><span class="b o">F</span> <span>York St <span class="to">→</span> 34th St–Herald Sq <span class="to">· DUMBO home, no transfer</span></span></div>
+      <div class="route"><span class="b bl">A</span><span class="b bl">C</span> <span>High St <span class="to">→</span> Fulton St, then <span class="b g">4</span><span class="b g">5</span> <span class="to">→</span> Bowling Green <span class="to">· DUMBO to the carousel</span></span></div>
+      <div class="route"><span class="b r">1</span> <span>South Ferry <span class="to">→</span> 34th St–Penn <span class="to">· Battery Park home, start of the line</span></span></div>
       <div class="route"><span class="b y">N</span><span class="b y">R</span><span class="b y">W</span> <span>34th St–Herald Sq <span class="to">→</span> 5th Ave–59th St <span class="to">· parade, Fifth Ave</span></span></div>
       <div class="route"><span class="b bl">A</span><span class="b bl">C</span><span class="b bl">E</span> <span>Canal St <span class="to">→</span> 14th St <span class="to">· Chinatown to the High Line, 6 min</span></span></div>
       <div class="route"><span class="b p">7</span> <span>34th St–Hudson Yards <span class="to">→</span> 5th Ave–Bryant Park <span class="to">· High Line home</span></span></div>
@@ -843,7 +857,7 @@ body{
 
     <div class="card">
       <h3>Fixed points — do not miss</h3>
-      <p>Sun 9:00a ferry · Mon 2:00p food tour · Tue 11:00a space show · Tue 2:45p Serendipity · Tue 7:00p curtain · Wed 3:05p train out of Penn</p>
+      <p>Sun 9:00a ferry · Sun 8:45p last carousel ride · Mon 2:00p food tour · Tue 11:00a space show · Tue 2:45p Serendipity · Tue 7:00p curtain · Wed 3:05p train out of Penn</p>
       <p>Everything else has slack in it.</p>
     </div>
 
