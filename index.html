@@ -15,11 +15,9 @@
   --orange:#FF6319;   /* B D F M */
   --yellow:#FCCC0A;   /* N Q R W */
   --purple:#B933AD;   /* 7 */
-  --njt:#F36E21;      /* NJ Transit */
 }
 
 *{box-sizing:border-box;}
-
 html{-webkit-text-size-adjust:100%;}
 
 body{
@@ -67,22 +65,11 @@ body{
 }
 .mast .base strong{color:var(--paper);font-weight:600;}
 
-/* ---------- section headers ---------- */
-
-.eyebrow{
-  font-size:.68rem;
-  font-weight:700;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin:0 0 .55rem;
-}
-
 /* ---------- booking checklist ---------- */
 
 .prep{
   border:2px solid var(--ink);
-  padding:1.15rem 1.15rem .6rem;
+  padding:1.15rem 1.15rem .1rem;
   margin:0 0 2.6rem;
 }
 .prep h2{
@@ -238,10 +225,7 @@ body{
 
 .ref{border-top:2px solid var(--ink);padding-top:1.5rem;}
 .ref h2{margin:0 0 1.2rem;font-size:1.05rem;font-weight:700;}
-.card{
-  border-top:1px solid var(--rule);
-  padding:.85rem 0;
-}
+.card{border-top:1px solid var(--rule);padding:.85rem 0;}
 .card h3{
   margin:0 0 .38rem;
   font-size:.68rem;font-weight:700;letter-spacing:.14em;
@@ -305,6 +289,12 @@ body{
     </label>
 
     <label class="task">
+      <input type="checkbox" data-task="amnh">
+      <span class="task-body">Natural History Museum — Tue Oct 13, 10:00a. <b>General Admission + 1 Ticketed Exhibition</b>, and pick the 11:00a space show slot.
+        <em>The planetarium is not included in general admission. Reserve the showtime when you buy.</em></span>
+    </label>
+
+    <label class="task">
       <input type="checkbox" data-task="totr">
       <span class="task-body">Top of the Rock — Sat Oct 10, 5:45p timed entry.
         <em>Sunset is ~6:20p. This slot gets you daylight, sunset, and lit skyline on one ticket.</em></span>
@@ -319,6 +309,12 @@ body{
     <label class="task">
       <input type="checkbox" data-task="foodtour">
       <span class="task-body">Chinatown &amp; Little Italy food tour — Mon Oct 12, 2:00p start.</span>
+    </label>
+
+    <label class="task">
+      <input type="checkbox" data-task="serendipity">
+      <span class="task-body">Serendipity 3 — Tue Oct 13, 2:45p. Reserve.
+        <em>225 E 60th. Walk-in waits are legendary; mid-afternoon is the softest slot of the day.</em></span>
     </label>
 
     <label class="task">
@@ -344,7 +340,7 @@ body{
   <section class="day">
     <div class="day-head">
       <div class="n">1</div>
-      <div class="t"><span>Saturday 10 October</span>Arrival &amp; Midtown</div>
+      <div class="t"><span>Saturday 10 October</span>Arrival, the Reuben &amp; the Big Piano</div>
     </div>
 
     <div class="stop">
@@ -367,8 +363,8 @@ body{
       <div class="time">11:50a</div><div class="track"></div>
       <div class="body">
         <div class="what">NJ Transit → New York Penn Station</div>
-        <div class="note">Board any <b>Northeast Corridor</b> or <b>North Jersey Coast Line</b> train toward New York Penn. About 30 minutes. <b>Do not get off at Newark Penn</b> — ride to the last stop.</div>
-        <div class="note">$17.25 adult, half price ages 5–11. AirTrain fee is already included.</div>
+        <div class="note">Any <b>Northeast Corridor</b> or <b>North Jersey Coast Line</b> train toward New York Penn. About 30 minutes. <b>Do not get off at Newark Penn</b> — ride to the last stop.</div>
+        <div class="note">$17.25 adult, half price ages 5–11. AirTrain fee already included.</div>
       </div>
     </div>
 
@@ -376,7 +372,7 @@ body{
       <div class="time">12:40p</div><div class="track"></div>
       <div class="body">
         <div class="what">Hotel — drop bags</div>
-        <div class="note">Penn Station exits at 31st &amp; 8th. Nine-minute walk, or <span class="b o">B</span><span class="b o">D</span><span class="b o">F</span><span class="b o">M</span> one stop. Room probably won't be ready; leave the bags and go.</div>
+        <div class="note">Penn exits at 31st &amp; 8th. Nine-minute walk, or <span class="b o">B</span><span class="b o">D</span><span class="b o">F</span><span class="b o">M</span> one stop. Room probably won't be ready; leave the bags and go.</div>
         <div class="flag">Ask for a <b>low floor</b>. The elevators are this hotel's one real weakness — few, slow, occasionally one down.</div>
       </div>
     </div>
@@ -386,7 +382,7 @@ body{
       <div class="body">
         <div class="what">Lunch — Sarge's Delicatessen</div>
         <span class="addr">548 Third Avenue at E 36th · 12 min walk</span>
-        <div class="note"><b>The Reuben.</b> This is the one. Split a sandwich between two people — the portions are absurd. Save room, or don't, and skip dinner.</div>
+        <div class="note"><b>The Reuben.</b> This is the one. Split a sandwich between two people — the portions are absurd.</div>
       </div>
     </div>
 
@@ -394,15 +390,25 @@ body{
       <div class="time">3:00p</div><div class="track"></div>
       <div class="body">
         <div class="what">Bryant Park</div>
-        <div class="note">Free chess, board games, carousel. Good place to reset after a travel morning.</div>
+        <div class="note">Free chess, board games, carousel. Good reset after a travel morning.</div>
       </div>
     </div>
 
     <div class="stop">
-      <div class="time">4:00p</div><div class="track"></div>
+      <div class="time">3:45p</div><div class="track"></div>
       <div class="body">
-        <div class="what">Times Square</div>
-        <div class="note">Walk up Broadway from 42nd. Twenty minutes is enough — you'll pass through it again.</div>
+        <div class="what">Walk up Broadway through Times Square</div>
+        <div class="note">Daylight pass only — you'll get the real version Tuesday night coming out of the theater.</div>
+      </div>
+    </div>
+
+    <div class="stop hero">
+      <div class="time">4:15p</div><div class="track"></div>
+      <div class="body">
+        <div class="what">FAO Schwarz — the Big Piano</div>
+        <span class="addr">30 Rockefeller Plaza · same building as Top of the Rock</span>
+        <div class="note">The dance-on piano from <b>Big</b>. It's free, no purchase needed, and there's usually a short line. A mirrored copy is mounted on the ceiling so people out in the plaza can watch the keys light up.</div>
+        <div class="flag"><b>Wear socks.</b> Shoes come off to play the piano, and they won't let you on barefoot.</div>
       </div>
     </div>
 
@@ -410,8 +416,8 @@ body{
       <div class="time">5:45p</div><div class="track"></div>
       <div class="body">
         <div class="what">Top of the Rock</div>
-        <span class="addr">30 Rockefeller Plaza · timed entry</span>
-        <div class="note">Sunset ~6:20p. Empire State Building framed dead center to the south, Central Park at your back to the north.</div>
+        <span class="addr">Same building — take the elevator up from the FAO level</span>
+        <div class="note">Sunset ~6:20p. Empire State framed dead center to the south, Central Park at your back to the north.</div>
       </div>
     </div>
 
@@ -436,7 +442,7 @@ body{
       <div class="time">7:30a</div><div class="track"></div>
       <div class="body">
         <div class="what">Breakfast at the hotel — go early</div>
-        <div class="note">Free, and it's included. Before 8:00 beats both the breakfast crowd and the elevator crush.</div>
+        <div class="note">Free and included. Before 8:00 beats both the breakfast crowd and the elevator crush.</div>
       </div>
     </div>
 
@@ -453,7 +459,7 @@ body{
       <div class="body">
         <div class="what">Battery Park — Statue City Cruises</div>
         <span class="addr">1 Battery Park Underpass</span>
-        <div class="note">TSA-style screening before boarding. <b>Travel light</b> — no big bags, and you'll screen again at the pedestal.</div>
+        <div class="note">TSA-style screening before boarding. <b>Travel light</b> — no big bags, and you screen again at the pedestal.</div>
       </div>
     </div>
 
@@ -481,12 +487,21 @@ body{
       </div>
     </div>
 
+    <div class="stop hero">
+      <div class="time">2:25p</div><div class="track"></div>
+      <div class="body">
+        <div class="what">SeaGlass Carousel</div>
+        <span class="addr">State &amp; Water Streets · 4 min walk from the ferry · $6</span>
+        <div class="note">Inside a glass nautilus shell. You ride <b>inside</b> illuminated fish rather than on top of horses, and the whole thing spins on three rotating platters. Four minutes, and worth every one of the six dollars.</div>
+      </div>
+    </div>
+
     <div class="stop">
-      <div class="time">2:45p</div><div class="track"></div>
+      <div class="time">2:55p</div><div class="track"></div>
       <div class="body">
         <div class="what">9/11 Memorial pools &amp; the Oculus</div>
-        <span class="addr">180 Greenwich Street · 15 min walk from Battery</span>
-        <div class="note">Outdoors and free. Names are carved into the bronze parapets around both pools. Walk through the Oculus after. <b>Not going inside the museum.</b></div>
+        <span class="addr">180 Greenwich Street · 15 min walk</span>
+        <div class="note">Outdoors and free. Names carved into the bronze parapets around both pools. Walk through the Oculus after. <b>Not going inside the museum.</b></div>
       </div>
     </div>
 
@@ -495,8 +510,8 @@ body{
       <div class="body">
         <div class="what">Walk the Brooklyn Bridge</div>
         <span class="addr">Manhattan entrance near City Hall, Park Row</span>
-        <div class="note">About 35 minutes across. Sunset is ~6:20, so you're in warm light the whole way with the skyline behind you.</div>
-        <div class="note">The bike lane was moved down to the roadway in 2021 — the promenade is pedestrians only now, much calmer than it used to be.</div>
+        <div class="note">About 35 minutes across. Sunset ~6:20, so you're in warm light the whole way with the skyline behind you.</div>
+        <div class="note">The bike lane moved down to the roadway in 2021 — the promenade is pedestrians only now, far calmer than it used to be.</div>
       </div>
     </div>
 
@@ -513,7 +528,7 @@ body{
       <div class="body">
         <div class="what">Dinner — Juliana's</div>
         <span class="addr">19 Old Fulton Street</span>
-        <div class="note">Coal-oven pizza. Patsy Grimaldi's own place, generally better than the Grimaldi's next door. Time Out Market is the backup if the wait is long — food hall, easy with a kid, rooftop view.</div>
+        <div class="note">Coal-oven pizza. Patsy Grimaldi's own place, generally better than the Grimaldi's next door. Time Out Market is the backup if the wait is long.</div>
       </div>
     </div>
 
@@ -531,33 +546,33 @@ body{
   <section class="day">
     <div class="day-head">
       <div class="n">3</div>
-      <div class="t"><span>Monday 12 October · Columbus Day</span>Parade, Chinatown &amp; Little Italy</div>
+      <div class="t"><span>Monday 12 October · Columbus Day</span>Parade, Chinatown &amp; the High Line at sunset</div>
     </div>
 
     <div class="stop">
       <div class="time">9:30a</div><div class="track"></div>
       <div class="body">
         <div class="what">Slow morning</div>
-        <div class="note">Sleep in. Today's only fixed point is a 2:00p tour.</div>
-        <div class="flag"><b>Fifth Avenue is closed from 42nd to 72nd, roughly 11:30a to 3:30p.</b> Don't plan anything that needs to cross it.</div>
+        <div class="note">Sleep in. Today's only fixed point is a 2:00p tour, and the day ends outdoors at golden hour.</div>
+        <div class="flag"><b>Fifth Avenue closes from 42nd to 72nd, roughly 11:30a to 3:30p.</b> Everything today is deliberately west or south of it.</div>
       </div>
     </div>
 
     <div class="stop hero">
       <div class="time">11:15a</div><div class="track"></div>
       <div class="body">
-        <div class="what">Columbus Day Parade</div>
+        <div class="what">Columbus Day Parade — 45 minutes of it</div>
         <span class="addr">Stand on Fifth Avenue in the 60s</span>
-        <div class="note">Steps off at 11:30. Roughly 35,000 marchers — bands, floats, dancers. The upper stretch near the dispersal end is far less packed than the 40s and 50s where everything forms up.</div>
-        <div class="note">Get there by <span class="b y">N</span><span class="b y">R</span><span class="b y">W</span> to Fifth Ave–59th St, then walk north.</div>
+        <div class="note">Steps off 11:30. Roughly 35,000 marchers — bands, floats, dancers. The upper stretch near the dispersal end is far less packed than the 40s and 50s where everything forms up.</div>
+        <div class="note">Get there <span class="b y">N</span><span class="b y">R</span><span class="b y">W</span> to Fifth Ave–59th St, then walk north.</div>
       </div>
     </div>
 
     <div class="stop">
-      <div class="time">12:45p</div><div class="track"></div>
+      <div class="time">12:15p</div><div class="track"></div>
       <div class="body">
-        <div class="what">Leave the parade, head downtown</div>
-        <div class="note">Forty-five minutes to an hour of parade is plenty. Subway to Canal Street. Grab something small — you're about to eat for two hours.</div>
+        <div class="what">Leave while it's still going, head downtown</div>
+        <div class="note">Forty-five minutes of parade is the right amount. Subway to Canal Street. Eat something small — you're about to eat for two hours.</div>
       </div>
     </div>
 
@@ -565,33 +580,42 @@ body{
       <div class="time">2:00p</div><div class="track"></div>
       <div class="body">
         <div class="what">Chinatown &amp; Little Italy food tour</div>
-        <div class="note">Two hours or so. Come hungry.</div>
+        <div class="note">Two hours or so. Come hungry. Mulberry Street will be packed and loud on Columbus Day, which is the whole point.</div>
       </div>
     </div>
 
     <div class="stop">
-      <div class="time">4:15p</div><div class="track"></div>
+      <div class="time">4:05p</div><div class="track"></div>
       <div class="body">
-        <div class="what">Ferrara Bakery &amp; Cafe</div>
+        <div class="what">Ferrara Bakery, if the tour didn't already stop there</div>
         <span class="addr">195 Grand Street · open since 1892</span>
-        <div class="note">Cannoli and rainbow cookies. Then walk Mulberry Street — it'll be packed and loud on Columbus Day, which is the whole point.</div>
+        <div class="note">Cannoli and rainbow cookies. Three minutes from the Canal St station.</div>
       </div>
     </div>
 
     <div class="stop">
-      <div class="time">5:30p</div><div class="track"></div>
+      <div class="time">4:30p</div><div class="track"></div>
       <div class="body">
-        <div class="what">Optional — Katz's Delicatessen</div>
-        <span class="addr">205 E Houston Street · 12 min walk from Little Italy</span>
-        <div class="note">If anyone still has room. Order the <b>plain pastrami on rye</b>, not the Reuben — that's what Katz's is actually for. Hold onto the paper ticket they hand you at the door.</div>
+        <div class="what"><span class="b bl">A</span><span class="b bl">C</span><span class="b bl">E</span> Canal St → 14th St</div>
+        <div class="note">Six minutes. Walk west to the High Line's south entrance at Gansevoort Street.</div>
+      </div>
+    </div>
+
+    <div class="stop hero">
+      <div class="time">4:50p</div><div class="track"></div>
+      <div class="body">
+        <div class="what">The High Line — south to north, into the sunset</div>
+        <span class="addr">Enter at Gansevoort St · exit at 34th St / Hudson Yards · free</span>
+        <div class="note">About 1.5 miles on an abandoned elevated freight line, thirty feet up. Walking <b>north</b> at this hour puts the Hudson on your left the whole way with the sun going down over New Jersey. Sunset is 6:17.</div>
+        <div class="note">Chelsea Market sits right off the line at 16th St if anyone somehow still wants food. Little Island is a five-minute detour at the south end.</div>
       </div>
     </div>
 
     <div class="stop">
-      <div class="time">—</div><div class="track"></div>
+      <div class="time">6:30p</div><div class="track"></div>
       <div class="body">
-        <div class="what">No show tonight</div>
-        <div class="note">Broadway is dark on Mondays.</div>
+        <div class="what"><span class="b p">7</span> 34th St–Hudson Yards → 5th Ave–Bryant Park</div>
+        <div class="note">Eight minutes, then a three-minute walk to the hotel. Big day — no show tonight, Broadway is dark on Mondays.</div>
       </div>
     </div>
   </section>
@@ -601,47 +625,74 @@ body{
   <section class="day">
     <div class="day-head">
       <div class="n">4</div>
-      <div class="t"><span>Tuesday 13 October</span>Central Park &amp; Broadway</div>
+      <div class="t"><span>Tuesday 13 October</span>The Milky Way, the Park, a Sundae &amp; a Show</div>
     </div>
 
     <div class="stop">
-      <div class="time">9:00a</div><div class="track"></div>
+      <div class="time">9:15a</div><div class="track"></div>
       <div class="body">
-        <div class="what"><span class="b y">N</span><span class="b y">R</span><span class="b y">W</span> → Fifth Ave–59th St</div>
-        <div class="note">Enter the park at Grand Army Plaza, Fifth &amp; 59th.</div>
+        <div class="what"><span class="b o">B</span><span class="b o">C</span> from 42nd St–Bryant Park → 81st St–Museum of Natural History</div>
+        <div class="note">The station exit lets out directly into the museum. About 18 minutes.</div>
       </div>
     </div>
 
     <div class="stop hero">
-      <div class="time">9:30a</div><div class="track"></div>
+      <div class="time">10:00a</div><div class="track"></div>
       <div class="body">
-        <div class="what">Central Park, south to north</div>
-        <div class="note"><b>The Mall</b> (the elm allée) → <b>Bethesda Terrace</b> — go under the arcade and look up at the tiled ceiling, most people miss it → <b>Bow Bridge</b> → <b>Belvedere Castle</b>. Two to three hours at a walking pace.</div>
+        <div class="what">American Museum of Natural History</div>
+        <span class="addr">200 Central Park West at 79th</span>
+        <div class="note">Titanosaur, the blue whale, the T. rex, and the Rose Center. Head for the Cosmic Pathway — the 360-foot spiral ramp where every step is about 75 million years.</div>
+      </div>
+    </div>
+
+    <div class="stop hero">
+      <div class="time">11:00a</div><div class="track"></div>
+      <div class="body">
+        <div class="what">Hayden Planetarium — <em>Encounters in the Milky Way</em></div>
+        <div class="note">Twenty-five minutes on the 87-foot dome. It's built largely on Gaia astrometry — stellar streams, the Sun's actual path through the galaxy, and where the Milky Way is headed. Shows run every 30 minutes; <b>you have to reserve the slot when you buy the ticket.</b></div>
       </div>
     </div>
 
     <div class="stop">
       <div class="time">12:30p</div><div class="track"></div>
       <div class="body">
-        <div class="what">Lunch on the Upper West Side</div>
-        <div class="note">Exit at 79th &amp; Central Park West.</div>
+        <div class="what">Into Central Park at 81st &amp; Central Park West</div>
+        <div class="note">Straight across the street from the museum door.</div>
+      </div>
+    </div>
+
+    <div class="stop hero">
+      <div class="time">12:30p</div><div class="track"></div>
+      <div class="body">
+        <div class="what">Central Park, northwest to southeast</div>
+        <div class="note"><b>Belvedere Castle</b> → <b>Bow Bridge</b> → <b>Bethesda Terrace</b> (go under the arcade and look up at the tiled ceiling, most people walk right past it) → <b>The Mall</b>, the elm allée → exit at Grand Army Plaza, 59th &amp; 5th.</div>
+        <div class="note">About 1.75 hours at a walking pace, and it ends four blocks from lunch.</div>
+      </div>
+    </div>
+
+    <div class="stop hero">
+      <div class="time">2:45p</div><div class="track"></div>
+      <div class="body">
+        <div class="what">Serendipity 3 — late lunch</div>
+        <span class="addr">225 E 60th Street · 8 min walk east from the park</span>
+        <div class="note">Frrrozen Hot Chocolate and the sundaes are the reason to come; the savory menu is fine but nobody's writing home about it. Order accordingly — go dessert-forward.</div>
+        <div class="flag"><b>Reserve.</b> Mid-afternoon is deliberate — the noon and evening waits here are brutal, and 2:45 is the softest hour of the day.</div>
       </div>
     </div>
 
     <div class="stop">
-      <div class="time">1:30p</div><div class="track"></div>
+      <div class="time">4:15p</div><div class="track"></div>
       <div class="body">
-        <div class="what">Pick one</div>
-        <div class="note"><b>A —</b> American Museum of Natural History, 200 Central Park West. Right where you exit the park. The Hayden Planetarium space show is the reason to go.</div>
-        <div class="note"><b>B —</b> Fifth Avenue, now that it's reopened. Rockefeller Center shops, the Lego store, window-shopping down to 49th.</div>
+        <div class="what">Fifth Avenue, walking south</div>
+        <div class="note">Reopened now that the parade's done. Window-shop from 59th down toward the theater district. Roughly 30 blocks if you walk the whole thing — hop on the <span class="b y">N</span><span class="b y">R</span><span class="b y">W</span> when you've had enough.</div>
       </div>
     </div>
 
     <div class="stop">
-      <div class="time">5:00p</div><div class="track"></div>
+      <div class="time">5:30p</div><div class="track"></div>
       <div class="body">
-        <div class="what">Early dinner near the theater</div>
-        <div class="note">Book this. Every restaurant in the 40s is full at 5:30 on a show night.</div>
+        <div class="what">Light dinner near the theater</div>
+        <div class="note">Emphasis on light. There was a sundae three hours ago. Book it anyway — every restaurant in the 40s is full at 5:30 on a show night.</div>
       </div>
     </div>
 
@@ -650,6 +701,14 @@ body{
       <div class="body">
         <div class="what">Curtain — Broadway</div>
         <div class="note">Be seated by 6:40. <b>Tuesday curtains are 7:00, not 8:00</b> — which is exactly why the show is tonight and not Saturday.</div>
+      </div>
+    </div>
+
+    <div class="stop hero">
+      <div class="time">9:45p</div><div class="track"></div>
+      <div class="body">
+        <div class="what">Times Square at night</div>
+        <div class="note">You walk out of the theater into it. No planning required — just don't head straight for the subway. Walk it down to 42nd, then twelve minutes home on foot.</div>
       </div>
     </div>
   </section>
@@ -675,8 +734,8 @@ body{
       <div class="body">
         <div class="what">SUMMIT One Vanderbilt — first entry</div>
         <span class="addr">45 East 42nd Street · 8 min walk · arrive 8:50</span>
-        <div class="note">Floors 91–93, 1,210 feet. Air (the mirrored rooms), Levitation (glass ledges cantilevered over Madison Ave), the outdoor terrace, and Ascent if you booked it. Plan on 90 minutes to two hours.</div>
-        <div class="flag"><b>Wear pants — the floors are mirrored.</b> Flat, non-marking soles required. No heels, no heavy boots. And the glass ledges and terrace close in bad weather, with no backup day.</div>
+        <div class="note">Floors 91–93, 1,210 feet. Air (the mirrored rooms), Levitation (glass ledges cantilevered over Madison Ave), the outdoor terrace, and Ascent if you booked it. Plan 90 minutes to two hours.</div>
+        <div class="flag"><b>Wear pants — the floors are mirrored.</b> Flat, non-marking soles required. No heels, no heavy boots. The glass ledges and terrace close in bad weather, with no backup day.</div>
       </div>
     </div>
 
@@ -754,35 +813,45 @@ body{
       <p><b>Residence Inn by Marriott New York Manhattan / Times Square</b><br>
       1033 Sixth Avenue at West 39th Street · 212-768-0007</p>
       <p>Nearest trains: 42nd St–Bryant Park <span class="b o">B</span><span class="b o">D</span><span class="b o">F</span><span class="b o">M</span><span class="b p">7</span> · 34th St–Herald Sq <span class="b o">B</span><span class="b o">D</span><span class="b o">F</span><span class="b o">M</span><span class="b y">N</span><span class="b y">Q</span><span class="b y">R</span><span class="b y">W</span> · 34th St–Penn <span class="b r">1</span><span class="b r">2</span><span class="b r">3</span><span class="b bl">A</span><span class="b bl">C</span><span class="b bl">E</span></p>
-      <p>Whole Foods and a CVS are within two blocks. Use the kitchenette — water and snacks bought once will save real money and a lot of "I'm hungry" at bad moments.</p>
+      <p>Whole Foods and a CVS within two blocks. Use the kitchenette — water and snacks bought once will save real money and a lot of "I'm hungry" at bad moments.</p>
     </div>
 
     <div class="card">
       <h3>Rides you'll actually take</h3>
       <div class="route"><span class="b r">1</span> <span>34th St–Penn <span class="to">→</span> South Ferry <span class="to">· Statue of Liberty, ~20 min</span></span></div>
       <div class="route"><span class="b o">F</span> <span>York St <span class="to">→</span> 34th St–Herald Sq <span class="to">· DUMBO home, no transfer</span></span></div>
-      <div class="route"><span class="b y">N</span><span class="b y">R</span><span class="b y">W</span> <span>34th St–Herald Sq <span class="to">→</span> Fifth Ave–59th St <span class="to">· Central Park, parade</span></span></div>
-      <div class="route"><span class="b o">B</span><span class="b o">D</span> <span>34th St–Herald Sq <span class="to">→</span> Grand St <span class="to">· Chinatown, Little Italy</span></span></div>
+      <div class="route"><span class="b y">N</span><span class="b y">R</span><span class="b y">W</span> <span>34th St–Herald Sq <span class="to">→</span> 5th Ave–59th St <span class="to">· parade, Fifth Ave</span></span></div>
+      <div class="route"><span class="b bl">A</span><span class="b bl">C</span><span class="b bl">E</span> <span>Canal St <span class="to">→</span> 14th St <span class="to">· Chinatown to the High Line, 6 min</span></span></div>
+      <div class="route"><span class="b p">7</span> <span>34th St–Hudson Yards <span class="to">→</span> 5th Ave–Bryant Park <span class="to">· High Line home</span></span></div>
+      <div class="route"><span class="b o">B</span><span class="b o">C</span> <span>42nd St–Bryant Park <span class="to">→</span> 81st St <span class="to">· Natural History Museum</span></span></div>
       <p style="margin-top:.5rem">Pay with a contactless card or phone at the turnstile — tap the same card every ride and it caps for the week automatically. No MetroCard needed.</p>
     </div>
 
     <div class="card">
       <h3>Newark, both directions</h3>
       <p>AirTrain ↔ Newark Liberty Airport Rail Station ↔ NJ Transit Northeast Corridor or North Jersey Coast Line ↔ New York Penn Station. About 30 minutes on the train.</p>
-      <p>$17.25 adult one way, half price ages 5–11. The AirTrain fee is bundled in — buy <b>"NWK Airport"</b> as the destination, not a separate AirTrain fare. Buy on the app; onboard purchase adds $5.</p>
+      <p>$17.25 adult one way, half price ages 5–11. AirTrain fee is bundled in — buy <b>"NWK Airport"</b> as the destination, not a separate AirTrain fare. Buy on the app; onboard adds $5.</p>
       <p>Going out: ride to the <b>last stop</b>, New York Penn. Coming back: get off at <b>Newark Liberty International Airport</b>, not Newark Penn.</p>
     </div>
 
     <div class="card">
+      <h3>Wear-this notes</h3>
+      <p><b>Saturday</b> — socks. Shoes come off for the FAO piano.</p>
+      <p><b>Wednesday</b> — pants, flat non-marking soles. SUMMIT's floors are mirrored and they enforce it.</p>
+      <p><b>Every day</b> — this itinerary walks 4 to 6 miles daily. Broken-in shoes only.</p>
+    </div>
+
+    <div class="card">
       <h3>Fixed points — do not miss</h3>
-      <p>Sun 9:00a ferry · Tue 7:00p curtain · Wed 3:05p train out of Penn</p>
+      <p>Sun 9:00a ferry · Mon 2:00p food tour · Tue 11:00a space show · Tue 2:45p Serendipity · Tue 7:00p curtain · Wed 3:05p train out of Penn</p>
       <p>Everything else has slack in it.</p>
     </div>
 
     <div class="card">
       <h3>If it rains</h3>
-      <p>Sunday is the vulnerable day — the ferry runs but the bridge walk won't be fun. Swap in the 9/11 Museum interior, or the Intrepid at Pier 86.</p>
-      <p>Wednesday morning, SUMMIT's outdoor terrace and glass ledges close in bad weather. The indoor mirror rooms stay open, and Grand Central and the library are both undercover.</p>
+      <p><b>Sunday</b> is the exposed day — the ferry runs but the bridge walk won't be fun. Swap in the 9/11 Museum interior.</p>
+      <p><b>Monday</b> — the High Line is fully outdoors. Chelsea Market is indoors and sits right off it at 16th St, so duck in there instead.</p>
+      <p><b>Wednesday</b> — SUMMIT's terrace and glass ledges close in bad weather. The mirror rooms stay open, and Grand Central and the library are both undercover.</p>
     </div>
 
   </section>
@@ -796,15 +865,12 @@ body{
   var label = document.getElementById('saveState');
   var reset = document.getElementById('resetTasks');
 
-  // localStorage throws in some private-browsing modes and when site data is blocked.
   var ok = (function () {
     try {
       localStorage.setItem(KEY + ':probe', '1');
       localStorage.removeItem(KEY + ':probe');
       return true;
-    } catch (e) {
-      return false;
-    }
+    } catch (e) { return false; }
   })();
 
   if (!ok) {
@@ -814,19 +880,13 @@ body{
   }
 
   function read() {
-    try {
-      return JSON.parse(localStorage.getItem(KEY)) || {};
-    } catch (e) {
-      return {};
-    }
+    try { return JSON.parse(localStorage.getItem(KEY)) || {}; }
+    catch (e) { return {}; }
   }
 
   function write(state) {
-    try {
-      localStorage.setItem(KEY, JSON.stringify(state));
-    } catch (e) {
-      label.textContent = 'Could not save';
-    }
+    try { localStorage.setItem(KEY, JSON.stringify(state)); }
+    catch (e) { label.textContent = 'Could not save'; }
   }
 
   function count() {
@@ -856,7 +916,6 @@ body{
     count();
   });
 
-  // Keep tabs in sync if the page is open twice on the same device.
   window.addEventListener('storage', function (e) {
     if (e.key !== KEY) return;
     var s = read();
