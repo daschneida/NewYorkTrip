@@ -121,6 +121,22 @@ body{
   padding:.13rem .34rem;margin-left:.35rem;
   vertical-align:.08em;
 }
+.prep-foot{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;
+  border-top:1px solid var(--rule);
+  margin-top:.1rem;padding:.62rem 0 .55rem;
+  font-size:.68rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--muted);
+}
+.prep-foot button{
+  font:inherit;letter-spacing:.13em;
+  background:none;border:none;padding:.15rem 0;
+  color:var(--muted);cursor:pointer;
+  border-bottom:1.5px solid var(--rule);
+}
+.prep-foot button:hover{color:var(--ink);border-bottom-color:var(--ink);}
+.prep-foot button:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
 
 /* ---------- day ---------- */
 
@@ -248,6 +264,7 @@ body{
   .day,.prep{page-break-inside:avoid;break-inside:avoid;}
   .day-head,.b,.first{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   .stop .body{padding-bottom:.5rem;}
+  .prep-foot{display:none;}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -276,45 +293,50 @@ body{
     <p class="sub">Roughly in order of how fast they sell out.</p>
 
     <label class="task">
-      <input type="checkbox">
+      <input type="checkbox" data-task="statue">
       <span class="task-body">Statue City Cruises — Sun Oct 11, first ferry (~9:00a). <b>Pedestal</b> tickets.<span class="first">DO THIS FIRST</span>
         <em>Hard supply limit. Crown is 162 spiral steps and sells out months ahead — pedestal is plenty.</em></span>
     </label>
 
     <label class="task">
-      <input type="checkbox">
+      <input type="checkbox" data-task="broadway">
       <span class="task-body">Broadway — Tue Oct 13, 7:00p curtain.
         <em>Holiday week. Good seats thin out early.</em></span>
     </label>
 
     <label class="task">
-      <input type="checkbox">
+      <input type="checkbox" data-task="totr">
       <span class="task-body">Top of the Rock — Sat Oct 10, 5:45p timed entry.
         <em>Sunset is ~6:20p. This slot gets you daylight, sunset, and lit skyline on one ticket.</em></span>
     </label>
 
     <label class="task">
-      <input type="checkbox">
+      <input type="checkbox" data-task="summit">
       <span class="task-body">SUMMIT One Vanderbilt — Wed Oct 14, 9:00a, first entry.
         <em>Add the Ascent glass elevator now if you want it — it's a separate upcharge.</em></span>
     </label>
 
     <label class="task">
-      <input type="checkbox">
+      <input type="checkbox" data-task="foodtour">
       <span class="task-body">Chinatown &amp; Little Italy food tour — Mon Oct 12, 2:00p start.</span>
     </label>
 
     <label class="task">
-      <input type="checkbox">
+      <input type="checkbox" data-task="njtransit">
       <span class="task-body">NJ Transit app — buy EWR tickets both directions.
         <em>Destination is "NWK Airport." Buying onboard adds a $5 surcharge per ticket.</em></span>
     </label>
 
     <label class="task">
-      <input type="checkbox">
+      <input type="checkbox" data-task="airtrain">
       <span class="task-body">Check newarkairport.com for AirTrain construction the week before.
         <em>The replacement program runs shuttle buses on some weekend segments. You arrive on a Saturday.</em></span>
     </label>
+
+    <div class="prep-foot">
+      <span id="saveState">Saved on this device</span>
+      <button type="button" id="resetTasks">Clear all</button>
+    </div>
   </section>
 
 
@@ -766,5 +788,82 @@ body{
   </section>
 
 </div>
+
+<script>
+(function () {
+  var KEY = 'nyc-oct-2026:booking-tasks';
+  var boxes = document.querySelectorAll('.prep input[data-task]');
+  var label = document.getElementById('saveState');
+  var reset = document.getElementById('resetTasks');
+
+  // localStorage throws in some private-browsing modes and when site data is blocked.
+  var ok = (function () {
+    try {
+      localStorage.setItem(KEY + ':probe', '1');
+      localStorage.removeItem(KEY + ':probe');
+      return true;
+    } catch (e) {
+      return false;
+    }
+  })();
+
+  if (!ok) {
+    label.textContent = 'Not saving — site data is blocked';
+    reset.hidden = true;
+    return;
+  }
+
+  function read() {
+    try {
+      return JSON.parse(localStorage.getItem(KEY)) || {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function write(state) {
+    try {
+      localStorage.setItem(KEY, JSON.stringify(state));
+    } catch (e) {
+      label.textContent = 'Could not save';
+    }
+  }
+
+  function count() {
+    var done = 0;
+    boxes.forEach(function (b) { if (b.checked) done++; });
+    label.textContent = done
+      ? done + ' of ' + boxes.length + ' booked · saved on this device'
+      : 'Saved on this device';
+  }
+
+  var state = read();
+  boxes.forEach(function (box) {
+    box.checked = state[box.dataset.task] === true;
+    box.addEventListener('change', function () {
+      var s = read();
+      if (box.checked) { s[box.dataset.task] = true; } else { delete s[box.dataset.task]; }
+      write(s);
+      count();
+    });
+  });
+  count();
+
+  reset.addEventListener('click', function () {
+    if (!confirm('Uncheck everything?')) return;
+    boxes.forEach(function (b) { b.checked = false; });
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    count();
+  });
+
+  // Keep tabs in sync if the page is open twice on the same device.
+  window.addEventListener('storage', function (e) {
+    if (e.key !== KEY) return;
+    var s = read();
+    boxes.forEach(function (b) { b.checked = s[b.dataset.task] === true; });
+    count();
+  });
+})();
+</script>
 </body>
 </html>
